@@ -1,0 +1,20 @@
+[
+  {
+    "suite": "Sample suite",
+    "testcase": "TestCase1-  verify title-negative test",
+    "Teststeps": [
+      {
+        "step": "visit",
+        "screenshotname": " orangehrm homepage"
+      },
+      {
+        "step": "Assertion",
+        "screenshotname": "title verification error"
+      }
+    ],
+    "TestCasesreenshot": "Sample suite-TestCase1-  verify title-negative test",
+    "file": "Sample suite-TestCase1-  verify title-negative test.png",
+    "path": "./cypress/screenshots/Sample suite-TestCase1-  verify title-negative test.png",
+    "timestamp": "2024-08-06T06:34:27.287Z"
+  }
+]

@@ -17,10 +17,10 @@ describe('Sample suite', () => {
   });
 it('TestCase1-  verify title-negative test', function() {
     cy.visit("https://opensource-demo.orangehrmlive.com/");
-    //cy.screenshot('orangehrm homepage')
+    cy.screenshot('orangehrm homepage')
      addTestStep('visit', ' orangehrm homepage');
     cy.title().should('eq', 'OrangeHRM123');
-   // cy.screenshot('title verification error')
+   cy.screenshot('title verification error')
     addTestStep('Assertion', 'title verification error');
  
   });

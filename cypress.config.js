@@ -6,7 +6,7 @@ module.exports = defineConfig({
   e2e: {
     reporter: 'cypress-mochawesome-reporter',
     screenshotsFolder: "cypress/screenshots",
-    screenshotOnRunFailure:true,
+    screenshotOnRunFailure:false,
     trashAssetsBeforeRuns:true,
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);

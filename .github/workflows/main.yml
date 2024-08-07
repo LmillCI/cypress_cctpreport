@@ -18,6 +18,7 @@ jobs:
 
       - name: Upload screenshots
         uses: actions/upload-artifact@v4.3.5
+        if : failure()
         with:
           name: save screenshots
           if-no-files-found: error

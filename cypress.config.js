@@ -4,11 +4,12 @@ const path = require('path');
  
 module.exports = defineConfig({
   e2e: {
+   reporter: 'cypress-mochawesome-reporter',
     screenshotsFolder: "cypress/screenshots",
     screenshotOnRunFailure:true,
     trashAssetsBeforeRuns:true,
     setupNodeEvents(on, config) {
-     
+      require('cypress-mochawesome-reporter/plugin')(on);
       // implement node event listeners here
       on('task', {
         log(message) {

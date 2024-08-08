@@ -1,20 +1,16 @@
 [
   {
     "suite": "Sample suite",
-    "testcase": "TestCase1-  verify title-negative test",
+    "testcase": "TestCase2 - Saucedemo Site",
     "Teststeps": [
       {
-        "step": "visit",
-        "screenshotname": " orangehrm homepage"
-      },
-      {
-        "step": "Assertion",
-        "screenshotname": "title verification error"
+        "step": "visit website",
+        "screenshotname": "saucedemo"
       }
     ],
-    "TestCasesreenshot": "Sample suite-TestCase1-  verify title-negative test",
-    "file": "Sample suite-TestCase1-  verify title-negative test.png",
-    "path": "./cypress/screenshots/Sample suite-TestCase1-  verify title-negative test.png",
-    "timestamp": "2024-08-07T06:17:17.867Z"
+    "TestCasesreenshot": "Sample suite-TestCase2 - Saucedemo Site",
+    "file": "Sample suite-TestCase2 - Saucedemo Site.png",
+    "path": "./cypress/screenshots/Sample suite-TestCase2 - Saucedemo Site.png",
+    "timestamp": "2024-08-08T13:02:08.371Z"
   }
 ]

@@ -5,6 +5,8 @@ on: push
 jobs:
   install:
     runs-on: ubuntu-22.04
+    permissions:
+          contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -12,30 +14,25 @@ jobs:
       - name: Cypress install
         uses: cypress-io/github-action@v6
         with:
-          # Disable running of tests within install job
           runTests: false
           build: npm run build
-        
+
       - name: Update screenshots in repository
-         run:| 
-         git config --global user.email "lmillaccnt@gmail.com"
-         git config --global user.name "LmillCI"
-      - name: add screenshots
-        run: git add cypress/screenshots
-      - name: commit screenshots
-        run:  git commit -m "Update screenshots"
-      - name: push changes
-         run:git push origin master
-         permissions:
-         contents: write
-      - name: Upload screenshots
+        run: |
+          git config --global user.email "lmillaccnt@gmail.com"
+          git config --global user.name "LmillCI"
+          git add cypress/screenshots
+          git commit -m "Update screenshots"
+          git push origin master
+        
+
+      - name: Upload screenshots artifact
         uses: actions/upload-artifact@v4.3.5
-      
         with:
-          name: save screenshots
+          name: save-screenshots
           if-no-files-found: error
           path: ./cypress/screenshots
-       
+
   cypress-run:
     runs-on: ubuntu-22.04
     needs: install
@@ -45,7 +42,6 @@ jobs:
 
       - name: Download the build folder
         uses: actions/download-artifact@v4
-        
         with:
-          name: save screenshots
+          name: save-screenshots
           path: ./cypress/screenshots

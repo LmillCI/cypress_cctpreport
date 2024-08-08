@@ -15,7 +15,13 @@ jobs:
           # Disable running of tests within install job
           runTests: false
           build: npm run build
-      
+      - name: Update screenshots in repository
+          run:|
+         git config --global user.email "lmillaccnt@gmail.com"
+         git config --global user.name "LmillCI"
+         git add cypress/screenshots
+         git commit -m "Update screenshots"
+         git push origin master
       - name: Upload screenshots
         uses: actions/upload-artifact@v4.3.5
       
